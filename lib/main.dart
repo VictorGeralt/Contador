@@ -21,7 +21,9 @@ class  _HomeState extends State<Home>{
     void _incrementar(){
       setState(() {
         _contador++;
-        if(_contador >= 10)
+        if (_contador > 10) 
+            _contador = 10;
+        if(_contador == 10)
         _info = "Não pode Entrar";
       });
     }
@@ -29,7 +31,9 @@ class  _HomeState extends State<Home>{
     void _decrementar(){
       setState(() {
         _contador--;
-        if(_contador <= 10)
+        if (_contador < 0)
+          _contador = 0; 
+        if(_contador < 10)
         _info = "Pode Entrar";
       });
     }
